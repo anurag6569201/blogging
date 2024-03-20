@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Global</title>
   <meta charset="utf-8">
@@ -14,35 +15,83 @@
   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/update.css' %}">
 </head>
+
 <body>
+  <!-- notification for small viewports and landscape oriented smartphones -->
+  <div class="device-notification">
+    <a class="device-notification--logo" href="#0">
+      <img src="{% static 'assets/img/logo.png' %}" alt="Global">
+      <p>Global</p>
+    </a>
+    <p class="device-notification--message">Global has so much to offer that we must request you orient your device
+      to portrait or find a larger screen. You won't be disappointed.</p>
+  </div>
 
-{% block content %}
-{% endblock content %}
+  <div class="perspective effect-rotate-left">
+    <div class="container">
+      <div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+          <header class="header">
+            <a class="header--logo" href="#0">
+              <img src="{% static 'assets/img/logo.png' %}" alt="Global">
+              <p>Anurag Singh</p>
+            </a>
+            <button class="header--cta cta">Hire Me</button>
+            <div class="header--nav-toggle">
+              <span></span>
+            </div>
+          </header>
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li onclick="window.location='{% url 'home:index' %}'" class="{% if request.path == '/' %}is-active{% endif %}"><span>Home</a></span></li>
+              <li onclick="window.location='{% url 'home:blogs' %}'" class="{% if request.path == '/blogs/' %}is-active{% endif %}"><span>Blogs</a></span></li>
+              <li onclick="window.location='{% url 'home:category' %}'" class="{% if request.path == '/category/' %}is-active{% endif %}"><span>Category</a></span></li>
+              <li onclick="window.location='{% url 'home:contact' %}'" class="{% if request.path == '/contact/' %}is-active{% endif %}"><span>Contact</a></span></li>
+              <li onclick="window.location='{% url 'home:hire' %}'" class="{% if request.path == '/hire/' %}is-active{% endif %}"><span>Hire Me</a></span></li>
+            </ul>
+          </nav>
+          <ul class="l-main-content main-content">
+          {% block content %}
+          {% endblock content %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul class="outer-nav">
+      <li class="{% if request.path == '/' %}is-active{% endif %}">Home</li>
+      <li class="{% if request.path == '/blogs/' %}is-active{% endif %}">Blogs</li>
+      <li class="{% if request.path == '/category/' %}is-active{% endif %}">Category</li>
+      <li class="{% if request.path == '/contact/' %}is-active{% endif %}">Contact</li>
+      <li class="{% if request.path == '/hire/' %}is-active{% endif %}">Hire Me</li>
+    </ul>
+  </div>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-  });
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{% static 'assets/js/vendor/jquery-2.2.4.min.js' %}"><\/script>')</script>
-<script src="{% static 'assets/js/functions-min.js' %}"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{% static 'assets / js / vendor / jquery - 2.2.4.min.js' %}"><\/script>')</script>
+  <script src="{% static 'assets/js/functions-min.js' %}"></script>
 </body>
+
 </html>
