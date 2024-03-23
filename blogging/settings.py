@@ -47,8 +47,6 @@ INSTALLED_APPS = [
 
     # custom apps
     'home',
-    'blogs',
-    'contact',
 
     # authentication app
     'userauths',

@@ -25,8 +25,6 @@ urlpatterns = [
 
     # app url
     path('',include('home.urls')),
-    path('bg/',include('blogs.urls')),
-    path('contact/',include('contact.urls')),
 
     # authentication urls
     path('user/',include('userauths.urls')),

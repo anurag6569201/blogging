@@ -1,8 +1,26 @@
 from django.shortcuts import render
+from .models import BlogModel
+from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 
-# Create your views here.
 def index(request):
-    return render(request,"core/index.html")
+    blogs=BlogModel.objects.all()
+    page=request.GET.get('page')
+    num_of_items=2
+    paginator=Paginator(blogs,num_of_items)
+
+    try:
+        blogs=paginator.page(page)
+    except PageNotAnInteger:
+        page=1
+        blogs=paginator.page(page)
+    except EmptyPage:
+        page=paginator.num_pages
+        blogs=paginator.page(page)
+    context={
+        'blogs':blogs,
+        "paginator":paginator,
+    }
+    return render(request,"core/index.html",context)
 
 def blogs(request):
     return render(request,"core/blogs.html")
