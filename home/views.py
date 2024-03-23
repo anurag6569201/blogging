@@ -5,7 +5,7 @@ from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 def index(request):
     blogs=BlogModel.objects.all()
     page=request.GET.get('page')
-    num_of_items=2
+    num_of_items=7
     paginator=Paginator(blogs,num_of_items)
 
     try:
