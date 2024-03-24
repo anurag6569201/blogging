@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
+from django_ckeditor_5.fields import CKEditor5Field
 
 # Create your models here.
 class BlogModel(models.Model):
@@ -18,3 +18,6 @@ class TopicsModel(models.Model):
 
 class TagsModel(models.Model):
     tagName=models.CharField(max_length=100)
+
+class MainBlogModel(models.Model):
+    text=CKEditor5Field('Text', config_name='extends')

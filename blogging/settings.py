@@ -144,6 +144,9 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+# renderstorage
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# ......
 
 
 # Default primary key field type
@@ -160,8 +163,10 @@ JAZZMIN_SETTINGS = {
 
 
 # ckeditor
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_5_FILE_STORAGE = "blogging.storage.CustomStorage"
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 customColorPalette = [
         {
             'color': 'hsl(4, 90%, 58%)',

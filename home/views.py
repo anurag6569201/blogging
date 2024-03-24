@@ -22,14 +22,5 @@ def index(request):
     }
     return render(request,"core/index.html",context)
 
-def blogs(request):
-    return render(request,"core/blogs.html")
-
-def contact(request):
-    return render(request,"core/contact.html")
-
-def hire(request):
-    return render(request,"core/hire.html")
-
-def category(request):
-    return render(request,"core/category.html")
+def blog(request):
+    return render(request,"core/blog.html")
