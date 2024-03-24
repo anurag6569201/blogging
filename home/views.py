@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import BlogModel
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 
@@ -22,5 +22,9 @@ def index(request):
     }
     return render(request,"core/index.html",context)
 
-def blog(request):
-    return render(request,"core/blog.html")
+def blog(request, blog_id):
+    blogs = get_object_or_404(BlogModel, id=blog_id)
+    context={
+        'blog':blogs,
+    }
+    return render(request,"core/blog.html",context)

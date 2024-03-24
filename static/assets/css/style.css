@@ -1049,3 +1049,16 @@ footer .wrapper { text-align: center; }
   .footer-link { margin-bottom: 0.3rem; }
 
 }
+/* custom css */
+.dark-theme .ck-content h1,
+.dark-theme .ck-content h2,
+.dark-theme .ck-content h3,
+.dark-theme .ck-content h4,
+.dark-theme .ck-content h5,
+.dark-theme .ck-content h6{
+  color: var(--foreground-secondary);
+}
+
+.dark-theme .ck-content p{
+  color: var(--foreground-tertiary);
+}

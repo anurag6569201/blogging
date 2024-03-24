@@ -185,7 +185,7 @@
                   <button class="blog-topic text-tiny">{{ blog.basedOn }}</button>
   
                   <h3>
-                    <a href="#" class="h3">
+                    <a href="{% url 'home:blog' blog.id %}" class="h3">
                       {{ blog.heading }}
                     </a>
                   </h3>

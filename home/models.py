@@ -10,7 +10,10 @@ class BlogModel(models.Model):
 
     basedOn=models.CharField(max_length=100)
     heading=models.CharField(max_length=100)
+    visiting=models.CharField(max_length=100)
     basicContent=models.CharField(max_length=300)
+    text=CKEditor5Field('Text', config_name='extends')
+
 
 class TopicsModel(models.Model):
     topicName=models.CharField(max_length=100)
@@ -18,6 +21,3 @@ class TopicsModel(models.Model):
 
 class TagsModel(models.Model):
     tagName=models.CharField(max_length=100)
-
-class MainBlogModel(models.Model):
-    text=CKEditor5Field('Text', config_name='extends')

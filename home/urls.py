@@ -5,5 +5,5 @@ app_name="home"
 
 urlpatterns=[
     path("",views.index,name="index"),
-    path("read/",views.blog,name="blog"),
+    path("read/<int:blog_id>/", views.blog, name="blog"),
 ]
