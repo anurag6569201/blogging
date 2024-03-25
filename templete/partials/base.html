@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{% static './assets/css/ckeditor.css' %}" type="text/css">
 
   <!--- custom css link-->
+  <link rel="stylesheet" href="{% static './assets/css/contact.css' %}">
   <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
 
   <!--- google font link-->
@@ -58,7 +59,7 @@
             </li>
 
             <li>
-              <a href="#" class="nav-link">Contact</a>
+              <a href="{% url 'home:contact' %}" class="nav-link">Contact</a>
             </li>
 
           </ul>

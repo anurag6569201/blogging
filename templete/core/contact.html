@@ -1,0 +1,216 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!------ Include the above in your HEAD tag ---------->
+<main>
+
+    <div class="main">
+
+        <div class="container">
+
+            <!--
+          - BLOG SECTION
+        -->
+
+            <div class="blog">
+
+                <h2 class="h2">Contact Me</h2>
+
+                <div class="blog-card-group">
+                    <div class="blog-card" style="display: block;">
+                        <div class="wrapper-flex">
+
+                            <div class="profile-wrapper">
+                                <img src="{% static './assets/images/author.png' %}" alt="Julia Walker" width="50">
+                            </div>
+
+                            <div class="wrapper" style="width: max-content;">
+                                <a href="#" class="h4">Anurag Singh</a>
+
+                                <p class="text-sm">
+                                    <time datetime="{{ today_date }}">{{ today_date }}</time>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <br>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{form.name}}
+                                        </div>
+                                        <div class="form-group">
+                                            {{form.email}}
+                                        </div>
+                                        <div class="form-group">
+                                            {{form.phone}}
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{form.content}}
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-secondary" type="submit"
+                                        style="padding: .2em;border: 1px solid #a0aec0;border-bottom: 2px solid #a0aec0;">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <!--
+          - ASIDE
+        -->
+
+            <div class="aside">
+
+                <div class="topics">
+
+                    <h2 class="h2">Social-link</h2>
+
+                    <a target="_blank" href="https://github.com/anurag6569201" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </div>
+
+                        <p>Git-Hub</p>
+                    </a>
+
+                    <a target="_blank" href="https://www.linkedin.com/in/anurag6569/" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </div>
+
+                        <p>Linkedin</p>
+                    </a>
+
+                    <a target="_blank" href="mailto:b323009@iiit-bh.ac.in" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="mail-unread-outline"></ion-icon>
+                        </div>
+
+                        <p>Email</p>
+                    </a>
+
+                    <a target="_blank" href="https://wa.me/918989591496" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </div>
+
+                        <p>Whatsapp</p>
+                    </a>
+
+                    <a target="_blank"
+                        href="https://instagram.com/singh.anu404?utm_source=qr&amp;amp;igshid=NGExMmI2YTkyZg%3D%3D"
+                        class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </div>
+
+                        <p>Instagram</p>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!--
+    - #FOOTER
+  -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="wrapper">
+
+            <a href="#" class="footer-logo">
+                <img src="/static/assets/images/lightFav.png" alt="SimpleBlog Logo" width="150" class="logo-light">
+                <img src="/static/assets/images/darkFav.png" alt="SimpleBlog Logo" width="150" class="logo-dark">
+            </a>
+
+            <p class="footer-text">
+                Learn about Web accessibility, Web performance, and Database management.
+            </p>
+
+        </div>
+
+        <div class="wrapper">
+
+            <p class="footer-title">Quick Links</p>
+
+            <ul>
+
+                <li>
+                    <a href="#" class="footer-link">Advertise with us</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">About Us</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Contact Us</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="wrapper">
+
+            <p class="footer-title">Legal Stuff</p>
+
+            <ul>
+
+                <li>
+                    <a href="#" class="footer-link">Privacy Notice</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Terms Of Use</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; Copyright 2024 <a href="#">BlogSingh</a>
+    </p>
+
+</footer>
+
+
+{% endblock content %}
