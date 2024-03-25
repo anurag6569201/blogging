@@ -46,6 +46,7 @@ EMAIL_HOST_PASSWORD = 'SJD2vkI3B4Nn5j0g'
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -156,10 +157,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
-    'site_header':"Blogging",
-    'site_brand':"Blogging",
-    'site_logo':'assets/images/logo.png',
-    'copyright':"Blogging.com",
+    'site_header':"Blogsingh",
+    'site_brand':"Blogsingh",
+    'site_logo':'/assets/images/author.png',
+    'copyright':"blogsing.onrender.com",
 }
 
 

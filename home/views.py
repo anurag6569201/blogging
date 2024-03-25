@@ -8,7 +8,7 @@ from django.template.loader import render_to_string
 from django.shortcuts import redirect
 
 def index(request):
-    blogs=BlogModel.objects.all()
+    blogs=BlogModel.objects.all().order_by('-creationDate')
     page=request.GET.get('page')
     num_of_items=7
     paginator=Paginator(blogs,num_of_items)
