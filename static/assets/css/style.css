@@ -1048,6 +1048,7 @@ footer .wrapper { text-align: center; }
 
 }
 /* custom css */
+.dark-theme .bio-content h2,
 .dark-theme .ck-content h1,
 .dark-theme .ck-content h2,
 .dark-theme .ck-content h3,
@@ -1056,11 +1057,11 @@ footer .wrapper { text-align: center; }
 .dark-theme .ck-content h6{
   color: var(--foreground-secondary);
 }
-
+.dark-theme .bio-content p,
 .dark-theme .ck-content p{
   color: var(--foreground-tertiary);
 }
-
+.light-theme .bio-content h2,
 .light-theme .ck-content h1,
 .light-theme .ck-content h2,
 .light-theme .ck-content h3,
@@ -1069,7 +1070,7 @@ footer .wrapper { text-align: center; }
 .light-theme .ck-content h6{
   color: var(--foreground-secondary);
 }
-
+.light-theme .bio-content p,
 .light-theme .ck-content p{
   color: var(--foreground-secondary);
 }
