@@ -1062,3 +1062,16 @@ footer .wrapper { text-align: center; }
 .dark-theme .ck-content p{
   color: var(--foreground-tertiary);
 }
+
+.light-theme .ck-content h1,
+.light-theme .ck-content h2,
+.light-theme .ck-content h3,
+.light-theme .ck-content h4,
+.light-theme .ck-content h5,
+.light-theme .ck-content h6{
+  color: var(--foreground-secondary);
+}
+
+.light-theme .ck-content p{
+  color: var(--foreground-secondary);
+}
