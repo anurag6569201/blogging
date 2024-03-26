@@ -1,11 +1,19 @@
 from django.shortcuts import render, get_object_or_404
-from .models import BlogModel
+from home.models import BlogModel,Subscriber
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from datetime import datetime
-from home.forms import ContactForm
+from home.forms import ContactForm,SubscriberForm
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.shortcuts import redirect
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.core.mail import EmailMultiAlternatives
+
+@receiver(post_save, sender=BlogModel)
+def send_newsletter_on_new_blog(sender, instance, created, **kwargs):
+    if created:
+        send_newsletter()
 
 def index(request):
     blogs=BlogModel.objects.all().order_by('-creationDate')
@@ -21,9 +29,18 @@ def index(request):
     except EmptyPage:
         page=paginator.num_pages
         blogs=paginator.page(page)
+    
+    if request.method == 'POST':
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = SubscriberForm()
+
     context={
         'blogs':blogs,
         "paginator":paginator,
+        'newsletter':form,
     }
     return render(request,"core/index.html",context)
 
@@ -65,3 +82,23 @@ def contact(request):
 
 def about(request):
     return render(request,"core/about.html")
+
+def send_newsletter():
+    subject = "New Blog Updates from Our Website"
+    latest_blogs = BlogModel.objects.all().order_by('-creationDate')[:5]  # Get latest 5 blog posts
+    context = {'latest_blogs': latest_blogs}
+
+    html_content = render_to_string('core/newsletter_email.html', context)
+
+    email = EmailMultiAlternatives(
+        subject=subject,
+        body="Check out our latest blog posts!",
+        from_email='anurag6569201@gmail.com',
+        to=Subscriber.objects.values_list('email', flat=True),
+    )
+    email.attach_alternative(html_content, "text/html")
+
+    # Send email
+    email.send()
+
+    return redirect("home:index")

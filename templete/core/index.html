@@ -312,9 +312,9 @@
                   Subscribe to our newsletter to be among the first to keep up with the latest updates.
                 </p>
   
-                <form action="#">
-                  <input type="email" name="email" placeholder="Email Address" required>
-  
+                <form method="post">
+                  {% csrf_token %}
+                  {{ newsletter.as_p }}
                   <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
   

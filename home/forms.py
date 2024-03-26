@@ -1,3 +1,4 @@
+from .models import Subscriber
 from django import forms
 
 
@@ -6,3 +7,9 @@ class ContactForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Your Email'}))
     phone = forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder': 'Your Phone Number'}))
     content = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Your Message'}))
+
+
+class SubscriberForm(forms.ModelForm):
+    class Meta:
+        model = Subscriber
+        fields = ['email']
