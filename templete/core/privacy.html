@@ -1,0 +1,152 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+
+    <div class="main">
+
+        <div class="container">
+
+            <!--
+          - privacy SECTION
+        -->
+
+            <div class="blog">
+
+                <h2 class="h2">Privacy Notice</h2>
+
+                <div class="blog-card-group">
+                    <div class="blog-card" style="display: block;">
+                        <div class="wrapper-flex">
+
+                            <div class="profile-wrapper">
+                                <img src="{% static './assets/images/author.png' %}" alt="Julia Walker" width="50">
+                            </div>
+
+                            <div class="wrapper" style="width: max-content;">
+                                <a href="#" class="h4">Anurag Singh</a>
+
+                                <p class="text-sm">
+                                    <time datetime="{{ today_date }}">{{ today_date }}</time>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <p class="blog-text">Welcome to our blogging platform's privacy notice. Your privacy is important to us, and we are committed to protecting your personal information.</p>
+                            <section>
+                                <h4 class="h4">Information We Collect</h4>
+                                <p class="blog-text">We collect personal information that you provide to us voluntarily when using our platform. This may include:</p>
+                                <ul>
+                                    <li class="h4">Name</li>
+                                    <li class="h4">Email address</li>
+                                    <li class="h4">Content you submit (e.g., blog posts, comments)</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <br>
+                                <h4 class="h4">How We Use Your Information</h4>
+                                <p class="blog-text">We use the information we collect to:</p>
+                                <ul class="blog-text">
+                                    <li>Provide and maintain our blogging platform</li>
+                                    <li>Communicate with you about your account</li>
+                                    <li>Personalize your experience</li>
+                                    <li>Improve our platform and services</li>
+                                    <li>Respond to your inquiries and requests</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h4 class="h4">Sharing Your Information</h4>
+                                <p class="blog-text">We may share your personal information with third parties only in the following circumstances:</p>
+                                <ul class="blog-text">
+                                    <li>With your consent</li>
+                                    <li>To comply with legal obligations</li>
+                                    <li>To protect our rights or the rights of others</li>
+                                    <li>In connection with a merger, acquisition, or sale of assets</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h4 class="h4">Security</h4>
+                                <p class="blog-text">We take appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                            </section>
+                            <section>
+                                <h4 class="h4">Changes to This Privacy Notice</h4>
+                                <p class="blog-text">We may update this privacy notice from time to time. We will notify you of any changes by posting the new privacy notice on this page.</p>
+                            </section>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <!--
+          - ASIDE
+        -->
+
+            <div class="aside">
+
+                <div class="topics">
+
+                    <h2 class="h2">Social-link</h2>
+
+                    <a target="_blank" href="https://github.com/anurag6569201" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </div>
+
+                        <p>Git-Hub</p>
+                    </a>
+
+                    <a target="_blank" href="https://www.linkedin.com/in/anurag6569/" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </div>
+
+                        <p>Linkedin</p>
+                    </a>
+
+                    <a target="_blank" href="mailto:b323009@iiit-bh.ac.in" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="mail-unread-outline"></ion-icon>
+                        </div>
+
+                        <p>Email</p>
+                    </a>
+
+                    <a target="_blank" href="https://wa.me/918989591496" class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </div>
+
+                        <p>Whatsapp</p>
+                    </a>
+
+                    <a target="_blank"
+                        href="https://instagram.com/singh.anu404?utm_source=qr&amp;amp;igshid=NGExMmI2YTkyZg%3D%3D"
+                        class="topic-btn">
+                        <div class="icon-box">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </div>
+
+                        <p>Instagram</p>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+    
+
+
+{% endblock content %}

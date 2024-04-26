@@ -102,3 +102,37 @@ def send_newsletter():
     email.send()
 
     return redirect("home:index")
+
+def privacy(request):
+    return render(request,"core/privacy.html")
+
+
+def advertise(request):
+    today_date = datetime.now().strftime('%Y-%m-%d')
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            phone = form.cleaned_data['phone']
+            content = form.cleaned_data['content']
+
+            html = render_to_string('core/email.html', {
+                'name': name,
+                'email': email,
+                'phone': phone,
+                'content': content,
+            })
+
+            send_mail("The contact form subject", 'this is the message', email, ['anurag6569201@gmail.com'], html_message=html)
+            return redirect("home:index")
+    else:
+        form = ContactForm()
+
+    context={
+        'today_date': today_date,
+        'form': form,
+    }
+        
+    return render(request,"core/advertise.html",context)
