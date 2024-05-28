@@ -1,25 +1,8 @@
 {
-    "builds": [
-      {
-        "src": "blogging/wsgi.py",
-        "use": "@vercel/python"
-      },
-      {
-        "src": "build.sh",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "staticfiles"
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "blogging/wsgi.py"
-      }
-    ]
-  }
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "blogging/wsgi.py"
+    }
+  ]
+}
