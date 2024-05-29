@@ -1,8 +1,8 @@
 asgiref==3.7.2
 dj-database-url==2.1.0
-Django==4.2.9
+Django==4.2.1
 django-ckeditor-5==0.2.12
-django-cockroachdb==5.0
+django-cockroachdb==4.2
 django-jazzmin==2.6.1
 django-js-asset==2.2.0
 gunicorn==21.2.0
