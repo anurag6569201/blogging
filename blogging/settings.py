@@ -28,7 +28,7 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'django-insecure-vfs3$v(l4$k1%%mtexoyy0+(%%z(f26-*d2sb9n82_qmp%+63n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'blogging.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'], engine='django_cockroachdb')}
+DATABASES = {'default': dj_database_url.config(default='postgresql://anurag:Ljz3aoh-3yY0Q5FU2quDcg@portfolio-9063.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?sslmode=require', engine='django_cockroachdb')}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
