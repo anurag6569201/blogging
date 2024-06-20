@@ -31,7 +31,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'django-insecure-vfs3$v(l4$k1%%mtexoyy0+(%%z(f26-*d2sb9n82_qmp%+63n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://blogsingh.azurewebsites.net','https://127.0.0.1']
