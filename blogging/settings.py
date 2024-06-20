@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-vfs3$v(l4$k1%%mtexoyy0+(%%z(f26-*d2sb9n82_qmp%+63n
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://mr-analyzer.azurewebsites.net','https://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://blogsingh.azurewebsites.net','https://127.0.0.1']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
@@ -165,12 +165,9 @@ JAZZMIN_SETTINGS = {
 
 
 # ckeditor
-STATIC_URL = 'static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-
-
-MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 customColorPalette = [
         {
