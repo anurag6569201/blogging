@@ -31,7 +31,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'django-insecure-vfs3$v(l4$k1%%mtexoyy0+(%%z(f26-*d2sb9n82_qmp%+63n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://mr-analyzer.azurewebsites.net','https://127.0.0.1']
@@ -165,9 +165,12 @@ JAZZMIN_SETTINGS = {
 
 
 # ckeditor
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = 'static/'
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 customColorPalette = [
         {
